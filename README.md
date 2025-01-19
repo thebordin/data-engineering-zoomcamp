@@ -49,14 +49,14 @@ python ingest_data.py \
   --url='172.17.16.1'
 
 docker build -t taxi_ingest:v001 .
-
-URL="http://192.168.1.67:8000/yellow_tripdata_2024-01.csv"
+URL="https://github.com/DataTalksClub/nyc-tlc-data/releases/download/misc/taxi_zone_lookup.csv"
+URL="https://github.com/DataTalksClub/nyc-tlc-data/releases/download/yellow/yellow_tripdata_2021-01.csv.gz"
 docker run -it \
   --network=pg-network \
   taxi_ingest:v001 \
     --user=root \
     --password=root \
-    --host=pg-database \
+    --host=pgdatabase \
     --port=5432 \
     --db=ny_taxi \
     --table_name=yellow_taxi_trips \
