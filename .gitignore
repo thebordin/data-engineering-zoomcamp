@@ -13,7 +13,7 @@ terraform.tfstate.backup
 # Arquivos de variáveis sensíveis
 *.tfvars
 *.tfvars.json
-my-creds.json
+*my-creds.json
 
 # Logs de execução
 crash.log
